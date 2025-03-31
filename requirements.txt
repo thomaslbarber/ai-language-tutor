@@ -1,0 +1,8 @@
+openai
+requests
+sounddevice
+numpy
+scipy
+pygame
+keyboard
+opencc
