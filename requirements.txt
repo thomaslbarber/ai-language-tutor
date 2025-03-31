@@ -1,8 +1,7 @@
-openai
-requests
-sounddevice
 numpy
+sounddevice
 scipy
-pygame
 keyboard
-opencc
+pygame
+requests
+opencc-python-reimplemented
