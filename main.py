@@ -41,18 +41,6 @@ class ChineseLanguageTutor:
                     continue
 
                 print(f"You said: {transcript}")
-                print("Is this correct? (y/n)")
-
-                while True:
-                    user_input = input().strip().lower()
-                    if user_input in ['y', 'n']:
-                        break
-                    print("Please enter 'y' for yes or 'n' for no:")
-                
-                if user_input == 'n':
-                    print("Discarding incorrect transcription...")
-                    continue
-
 
                 self.conversation.add_message("user", transcript)
                 print("Getting AI response...")
