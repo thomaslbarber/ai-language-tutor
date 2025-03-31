@@ -16,7 +16,7 @@ class TTSHandler(OpenAIHandler):
             data = {
                 "model": "gpt-4o-mini-tts",
                 "input": text,
-                "voice": Config.TTS_VOICE,
+                "voice": Config.get_tts_voice(),
                 "response_format": "mp3"
             }
 

@@ -8,8 +8,6 @@ class TextConverter:
     """
     
     def __init__(self):
-        # Initialize converter with t2s.json configuration
-        # t2s.json is the conversion map from Traditional to Simplified Chinese
         self._converter = opencc.OpenCC('t2s.json')
     
     def to_simplified(self, text: str) -> str:
@@ -43,10 +41,8 @@ class TextConverter:
             if not text:
                 return None
                 
-            # Convert to simplified Chinese
             simplified = self.to_simplified(text)
             
-            # Remove extra whitespace
             cleaned = " ".join(simplified.split())
             
             return cleaned if cleaned else None

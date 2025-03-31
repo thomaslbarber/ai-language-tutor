@@ -13,12 +13,14 @@ class WhisperHandler(OpenAIHandler):
     def transcribe_audio(self, audio_file: str) -> Optional[str]:
         headers = {"Authorization": f"Bearer {Config.API_KEY}"}
         with open(audio_file, "rb") as f:
-            files = {"file": f}
+            files = { "file": f}
+            prompt = f"This is a {Config.get_language()} language learning conversation. Transcribe speech into {Config.get_language()} unless it makes logical sense not to."
             data = {
                 "model": "whisper-1",
-                "language": "zh",
+                "language": Config.get_code(),
                 "response_format": "json",
-                "prompt": "This is Mandarin Chinese speech"
+                "prompt": prompt,
+                "temperature": 0.0
             }
 
             response = requests.post("https://api.openai.com/v1/audio/transcriptions", 
