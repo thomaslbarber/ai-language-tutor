@@ -13,7 +13,7 @@ class AudioManager:
     @staticmethod
     def record_audio(max_duration: int = Config.MAX_DURATION, 
                     samplerate: int = Config.SAMPLE_RATE,
-                    threshold: float = 0.02) -> Optional[str]:
+                    threshold: float = 0.0003) -> Optional[str]:
         """Records audio with improved noise reduction and input validation.
         
         Args:
