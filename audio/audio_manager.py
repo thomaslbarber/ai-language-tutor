@@ -21,9 +21,9 @@ class AudioManager:
             samplerate: Audio sample rate (Hz)
             threshold: Amplitude threshold for noise gate (0.0 to 1.0)
         """
-        print("\nPress SPACE to start recording...")
+        print("\n\033[33mPress SPACE to start recording...\033[0m")
         keyboard.wait('space')
-        print("Recording... Press SPACE again to stop")
+        print("\033[31mRecording... Press SPACE again to stop\033[0m")
         
         audio_data = []
         recorded_frames = 0
@@ -78,7 +78,7 @@ class AudioManager:
             temp_wav = tempfile.NamedTemporaryFile(delete=False, suffix=".wav")
             wav.write(temp_wav.name, samplerate, audio_array)
             
-            print(f"Recording saved ({len(audio_array)/samplerate:.1f} seconds)")
+            print(f"\033[33mRecording saved ({len(audio_array)/samplerate:.1f} seconds)\033[30m")
             return temp_wav.name
             
         except Exception as e:

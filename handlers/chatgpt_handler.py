@@ -17,8 +17,8 @@ class ChatGPTHandler(OpenAIHandler):
             
         try:
             full_reply = response["choices"][0]["message"]["content"]
-            print("Tutor:")
-            print(full_reply.strip().encode('utf-8').decode('utf-8'))
+            print("\033[36m""The Tutor said: ")
+            print(full_reply.strip().encode('utf-8').decode('utf-8') + "\033[0m")
             return self._extract_chinese_text(full_reply, conversation)
         except Exception as e:
             print(f"Error processing their response: {e}")

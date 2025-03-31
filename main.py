@@ -71,8 +71,6 @@ class LanguageTutor:
                     print("Audio transcript is empty - skipping...")
                     continue
 
-                print(f"You said: {transcript}")
-
                 self.conversation.add_message("user", transcript)
                 print("Getting AI response...")
                 response = self.chatgpt.get_response(self.conversation)

@@ -32,7 +32,7 @@ class WhisperHandler(OpenAIHandler):
         
         if response.status_code == 200:
             transcript = response.json()["text"]
-            print("You said:", transcript.encode('utf-8').decode('utf-8'))
+            print("\033[35mYou said: " + transcript.encode('utf-8').decode('utf-8') + "\033[0m")
             return transcript
         else:
             print("Error with Whisper API:", response.text)
