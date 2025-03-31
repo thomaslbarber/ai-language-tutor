@@ -1,0 +1,7 @@
+numpy
+sounddevice
+scipy
+keyboard
+pygame
+requests
+opencc-python-reimplemented
