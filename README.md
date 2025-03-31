@@ -3,11 +3,16 @@ An interactive language learning tool powered by OpenAI's GPT-4, Whisper, and Te
 
 ## Features 🌟
 <ul>
-  <li>Voice Recognition: Speak in your target language and get real-time transcription</li>
-  <li>Intelligent Responses: Context-aware conversations with a virtual tutor</li>
-  <li>Text-to-Speech: Hear correct pronunciation of phrases in your target language</li>
-  <li>Conversation History: Maintains context for natural dialogue flow</li>
-  <li>Noise Reduction: Advanced audio processing for clear voice capture</li>
+  <li><b>Voice Recognition</b>: Speak in your target language and get real-time transcription</li>
+  <li><b>Intelligent Responses</b>: Context-aware conversations with a virtual tutor</li>
+  <li><b>Text-to-Speech</b>: Hear correct pronunciation of phrases in your target language</li>
+  <li><b>Conversation History</b>: Maintains context for natural dialogue flow</li>
+  <li><b>Noise Reduction</b>: Advanced audio processing for clear voice capture</li>
+  <li><b>Preconfigured Target Languages</b>: Comes with six pre-configured target languages to choose from, and the option to easily add new ones as per user need.
+    <ul>
+      <li>Preconfigured for: Mandarin Chinese, German, Japanese, Korean, Spanish, French]</li>
+    </ul>
+  </li>
 </ul>
  
 ## Prerequisites 📋
@@ -24,48 +29,44 @@ An interactive language learning tool powered by OpenAI's GPT-4, Whisper, and Te
 </ul>
 
 ## Installation 🔧
-Clone the repository:
+<ul>
+<li>Clone the repository:</li>
+  
 ```bash
 git clone https://github.com/yourusername/ai-language-tutor.git
 cd ai-language-tutor
 ```
-Install required packages:
+<li>Install required packages:</li>
+
 ```bash
 pip install -r requirements.txt
 ```
+  <li>Ensure your AI API key has been configured in your environment variables under 'OPENAI_API_KEY'</li>
+  <li>If your target is not one of the preconfigured languages (Mandarin Chinese, German, Japanese, Korean, Spanish, French), add a new entry in SUPPORTED_LANGUAGES with the following attributes:
+    <ul>
+  <li><i>id</i>: Unique identifier when choosing the language in the command line.</li>
+  <li><i>name</i>: A string representation fo the language. Used to inform OpenAI what language to expect.</li>
+  <li><i>code</i>: The ISO 639 representation for the language, used when parsing the text to ensure characters in the target language are ouput correctly in the command line.</li>
+  <li><i>voice</i>: The voice for the Tutor. <a href="https://platform.openai.com/docs/guides/text-to-speech#voice-options">Choose one from the list of available voices in the OpenAI documentation</a>.</li>
+    </ul>
+    </li>
+</ul>
 
-Set up your OpenAI API key:
-```bash
-set OPENAI_API_KEY=your_api_key_here
-```
 
-Update the language to your target language - this is preconfigured to use Mandarin Chinese.
 ## Usage 💡
-<ol>
-  <li>Start the program:</li>
-TODO.png
-  
-<li>Follow the on-screen prompts:</li>
-</ol>
+### Conversation
+<ul>
+  <li>Follow the on-screen prompts to select a target language to converse in.</li>
+  <li>Listen to the dialogue from the Tutor. This is audible, as well as visible in the console output.</li>
+  <li>When prompted, press SPACE to record your response. Press SPACE again to stop the recording.</li>
+  <li>The audio will be parsed to speech and sent to the Tutor for processing, who will continue the conversation at your level.</li>
+  <li>Repeat to engage in conversational practice. The conversation maintains at all times the latest two student and two tutor responses to ensure a level of contextual understanding without excessive API usage. </li>
+  <img src="docs/README_Overview.PNG"/>
+</ul>
 
-Project Structure 📁
-```plaintext
-ai-language-tutor/
-├── audio/
-│   └── audio_manager.py
-├── handlers/
-│   ├── api_handler.py
-│   ├── whisper_handler.py
-│   ├── chatgpt_handler.py
-│   └── tts_handler.py
-├── models/
-│   └── conversation.py
-├── utils/
-│   └── text_converter.py
-├── config.py
-├── main.py
-└── requirements.txt
-```
+### Teaching the User
+The tutor parses the input and provides corrections on any grammatical or pronunciation errors.</li>
+<img src="docs/README_CorrectingUser.PNG"/>
 
 ## Contributing 🤝
 <ol>
