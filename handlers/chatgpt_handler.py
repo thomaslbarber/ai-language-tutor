@@ -5,6 +5,7 @@ import requests
 
 class ChatGPTHandler(OpenAIHandler):
     def get_response(self, conversation: 'Conversation') -> Optional[str]:
+        print(conversation.get_messages())
         data = {
             "model": Config.MODEL,
             "messages": conversation.get_messages(),
@@ -17,19 +18,21 @@ class ChatGPTHandler(OpenAIHandler):
             
         try:
             full_reply = response["choices"][0]["message"]["content"]
-            print("ChatGPT:", full_reply.encode('utf-8').decode('utf-8'))
-            return self._extract_chinese_text(full_reply)
+            print("Them:", full_reply.encode('utf-8').decode('utf-8'))
+            return self._extract_chinese_text(full_reply, conversation)
         except Exception as e:
-            print(f"Error processing ChatGPT response: {e}")
+            print(f"Error processing their response: {e}")
             return None
 
     @staticmethod
-    def _extract_chinese_text(text: str) -> Optional[str]:
+    def _extract_chinese_text(text: str, conversation: 'Conversation') -> Optional[str]:
         try:
             chinese_start = text.find("Chinese:") + 8
             chinese_end = text.find("Pinyin:")
             if chinese_start > 7 and chinese_end > -1:
-                return text[chinese_start:chinese_end].strip()
+                extract = text[chinese_start:chinese_end].strip()
+                conversation.add_message("assistant", extract)
+                return extract
             print("Could not find Chinese text in response")
             return None
         except Exception as e:

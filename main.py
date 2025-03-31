@@ -53,6 +53,8 @@ class ChineseLanguageTutor:
                     print("Discarding incorrect transcription...")
                     continue
 
+
+                self.conversation.add_message("user", transcript)
                 print("Getting AI response...")
                 response = self.chatgpt.get_response(self.conversation)
                 if not response:
