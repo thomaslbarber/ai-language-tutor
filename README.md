@@ -1,5 +1,5 @@
 # ai-language-tutor 🎓
-An interactive language learning tool powered by OpenAI's GPT-4, Whisper, and Text-to-Speech APIs.
+An interactive language learning tool powered by OpenAI's GPT-4, Whisper, and Text-to-Speech APIs. Train your conversational skills by having natural voice conversations with an AI language tutor, who determines the speaker's level and converses at a suitable level, correcting any mistakes in grammar or pronunciation.
 
 ## Features 🌟
 <ul>
@@ -8,9 +8,9 @@ An interactive language learning tool powered by OpenAI's GPT-4, Whisper, and Te
   <li><b>Text-to-Speech</b>: Hear correct pronunciation of phrases in your target language</li>
   <li><b>Conversation History</b>: Maintains context for natural dialogue flow</li>
   <li><b>Noise Reduction</b>: Advanced audio processing for clear voice capture</li>
-  <li><b>Preconfigured Target Languages</b>: Comes with six pre-configured target languages to choose from, and the option to easily add new ones as per user need.
+  <li><b>Preconfigured Target Languages</b>: Includes six preconfigured target languages and allows users to easily add new ones
     <ul>
-      <li>Preconfigured for: Mandarin Chinese, German, Japanese, Korean, Spanish, French]</li>
+      <li>Preconfigured for: Mandarin Chinese, German, Japanese, Korean, Spanish, French</li>
     </ul>
   </li>
 </ul>
@@ -41,11 +41,11 @@ cd ai-language-tutor
 ```bash
 pip install -r requirements.txt
 ```
-  <li>Ensure your AI API key has been configured in your environment variables under 'OPENAI_API_KEY'</li>
+  <li>Set your OpenAI API key in your environment variables as 'OPENAI_API_KEY'</li>
   <li>If your target is not one of the preconfigured languages (Mandarin Chinese, German, Japanese, Korean, Spanish, French), add a new entry in SUPPORTED_LANGUAGES with the following attributes:
     <ul>
   <li><i>id</i>: Unique identifier when choosing the language in the command line.</li>
-  <li><i>name</i>: A string representation fo the language. Used to inform OpenAI what language to expect.</li>
+  <li><i>name</i>: A string representation of the language Used to inform OpenAI what language to expect.</li>
   <li><i>code</i>: The ISO 639 representation for the language, used when parsing the text to ensure characters in the target language are ouput correctly in the command line.</li>
   <li><i>voice</i>: The voice for the Tutor. <a href="https://platform.openai.com/docs/guides/text-to-speech#voice-options">Choose one from the list of available voices in the OpenAI documentation</a>.</li>
     </ul>
@@ -65,7 +65,7 @@ pip install -r requirements.txt
 </ul>
 
 ### Teaching the User
-The tutor parses the input and provides corrections on any grammatical or pronunciation errors.</li>
+The tutor parses the input and provides corrections on any grammatical or pronunciation errors.
 <img src="docs/README_CorrectingUser.PNG"/>
 
 ## Contributing 🤝
@@ -79,10 +79,7 @@ The tutor parses the input and provides corrections on any grammatical or pronun
 </ol>
 
 ## License 📄
-TODO
-
-Troubleshooting 🔍
-
+This project is licensed under the MIT License.
 
 ## Contact 📧
 Feel free to contact me with any issues.
