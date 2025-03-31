@@ -15,6 +15,7 @@ class Config:
     AUDIO_THRESHOLD = 0.02
     TEMP_AUDIO_FILE = "temp_audio.mp3"
     API_KEY = os.getenv("OPENAI_API_KEY")
+    MAX_MESSAGES = 6 
     TUTOR_BEHAVIOUR = """You are a Simplified Mandarin Chinese language tutor. 
     You will engage in conversations with the user and remain at their conversational level.
     You should be the driving force of the conversation, asking questions and providing feedback.
