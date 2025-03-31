@@ -79,7 +79,7 @@ The tutor parses the input and provides corrections on any grammatical or pronun
 </ol>
 
 ## License 📄
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact 📧
 Feel free to contact me with any issues.
