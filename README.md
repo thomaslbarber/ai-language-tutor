@@ -84,4 +84,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact 📧
 Feel free to contact me with any issues.
 
-Project Link: https://github.com/yourusername/ai-language-tutor
+Project Link: https://github.com/thomaslbarber/ai-language-tutor
